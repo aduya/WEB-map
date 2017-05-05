@@ -1,0 +1,31 @@
+<!doctype html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <style type="text/css">
+      body,html,#container{
+        height: 100%;
+        margin: 0px;
+      }
+    </style>
+    <title>快速入门</title>
+  </head>
+  <body>
+    <div id="container" tabindex="0"></div>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=2745b206d80e814cdacd8a6e8b484432"></script>
+    <script type="text/javascript">
+        var map = new AMap.Map('container',{
+            resizeEnable: true,
+            zoom: 14,
+            center: [103.919243,30.591189]
+        });
+        AMap.plugin(['AMap.ToolBar','AMap.Scale','AMap.OverView'],
+            function(){
+                map.addControl(new AMap.ToolBar());
+                map.addControl(new AMap.Scale());
+                map.addControl(new AMap.OverView({isOpen:true}));
+            });
+    </script>
+  </body>
+</html>
